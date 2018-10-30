@@ -1,7 +1,7 @@
-#############################################
-#   README for AQuA-HiChIP code, 2018		#
-#	by Berkley Gryder, gryderart@gmail.com	#
-#############################################
+###########################################
+README for AQuA-HiChIP code, 2018	
+by Berkley Gryder, gryderart@gmail.com	
+###########################################
 
 ### System requirements:
 	a. Software dependencies to install: 
