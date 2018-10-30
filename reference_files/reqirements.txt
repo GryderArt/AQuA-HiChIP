@@ -1,0 +1,19 @@
+### System requirements:
+	a. Software dependencies to install: 
+		HiC-Pro 2.10.0
+		bowtie  2-2.3.4
+		R 3.5.0
+		openmpi 3.0.0 
+		GSL 2.4
+		gcc  7.2.0
+		samtools 1.8
+		juicer  1.5.6
+	b. Harware suggestion:
+		HiC-Pro works well on a cluster node with 4 CPUs, 32 Gb of memory, and 200 Gb scratch disk space
+		***not tested for operation on a "normal" desktop computer***
+	c. Installation:
+		Follow instructions for installation at the following websites:
+			https://github.com/nservant/HiC-Pro
+			https://github.com/aidenlab/juicer/wiki/Juicer-Tools-Quick-Start
+			https://www.rstudio.com/products/rstudio/download/#download
+			http://bowtie-bio.sourceforge.net/bowtie2/manual.shtml#obtaining-bowtie-2
