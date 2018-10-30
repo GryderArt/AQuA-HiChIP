@@ -1,6 +1,6 @@
 # AQuA-HiChIP
 Bioinformatic tools (R scripts) for the analysis of Absolute Quantification of Architecture (AQuA-HiChIP) style data.
-
+DEMO instructions: https://github.com/GryderArt/AQuA-HiChIP/blob/master/README_DEMO.NatureProtocols.txt
 
 ## AQuA-HiChIP uncovers global changes in protein-mediated contact frequency
 ![image](https://github.com/GryderArt/AQuA-HiChIP/raw/master/AQuA_Figure1Artboard%201%404x.png)
