@@ -14,7 +14,7 @@
       sample.list.mm10 = list.dirs(path = project.folder.mm10, full.names = F, recursive = F)
       
 ### 2. Obtain spike in read counts. Mergestat is a standard output from the HiC-pro pipeline
-  ###GENERATION OF MERGESTAT DATAFRAME IS COMMENTED OUT FOR DEMO 
+  ###GENERATION OF MERGESTAT DATAFRAME IS COMMENTED OUT FOR PARTIAL DEMO. instead, upload using line 53
       # mergestat.all = as.data.frame(read.table(paste(project.folder,"/",sample.list[1],"/",sample.list[1],"_allValidPairs.mergestat",sep=""), sep="\t", header=F))
       # mergestat.all = as.data.frame(mergestat.all$V1)
       # 
