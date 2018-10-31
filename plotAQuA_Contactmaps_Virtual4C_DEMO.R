@@ -56,6 +56,7 @@
       source("https://bioconductor.org/biocLite.R")
       biocLite("HiCcompare")
       library(HiCcompare)
+      
       #these lines of code presume a matrix file created within the standard HiC-pro data structure
       sample1 = "Sample_RH4_D6_H3K27ac_HiChIP_HKJ22BGX7";sample2 = "Sample_RH4_Ent6_H3K27ac_HiChIP_HKJ22BGX7"
            removable.string = "Sample_" ; name1 = gsub(removable.string,"",sample1) ; name2 = gsub(removable.string,"",sample2)
@@ -65,6 +66,7 @@
       sparMat1 = read.table(paste(project.folder,sample1,"/",sample1,matrix.suffix,sep=""), header=F, sep="\t"); sparMat2 = read.table(paste(project.folder,sample2,"/",sample2,matrix.suffix,sep=""), header=F, sep="\t")
       denMat1 <- sparse2full(sparMat1, hic.table = FALSE, column.name = NA); denMat2 <- sparse2full(sparMat2, hic.table = FALSE, column.name = NA)
       denMat1.CPM = denMat1*1000000/(mergestat.all[2,name1]+mergestat.all[2,mm10_name1]) ; denMat2.CPM = denMat2*1000000/(mergestat.all[2,name2]+mergestat.all[2,mm10_name2])
+      
       AQuAfactor1 = mergestat.all[2,name1]/mergestat.all[2,mm10_name1] ; AQuAfactor2 = mergestat.all[2,name2]/mergestat.all[2,mm10_name2]
       
       denAQuA1 = denMat1.CPM*AQuAfactor1; denAQuA2 = denMat2.CPM*AQuAfactor2
@@ -79,17 +81,19 @@
           denAQuA1max = denAQuA1; denAQuA1max[denAQuA1max>AQuAmax] <- AQuAmax
           denAQuA2max = denAQuA2; denAQuA2max[denAQuA2max>AQuAmax] <- AQuAmax
       
-          pheatmap(((denAQuA1max)), cluster_rows = F, cluster_cols = F, color = colorRampPalette(c("white", "red"))(50))
-          pheatmap(((denAQuA2max)), cluster_rows = F, cluster_cols = F, color = colorRampPalette(c("white", "red"))(50))
+      #single sample heatmaps
+      pheatmap(((denAQuA1max)), cluster_rows = F, cluster_cols = F, color = colorRampPalette(c("white", "red"))(50))
+      pheatmap(((denAQuA2max)), cluster_rows = F, cluster_cols = F, color = colorRampPalette(c("white", "red"))(50))
       
+      #delta heatmap (treated vs. control)
       denDeltaAQuA = denAQuA2 - denAQuA1; denDeltaAQuA[denDeltaAQuA>quantile(denDeltaAQuA, probs = c(quant_cut))] = quantile(denDeltaAQuA, probs = c(quant_cut))
-      breakList = seq(-8, 8, by = 0.5)
-      pheatmap((denDeltaAQuA), cluster_rows = F, cluster_cols = F,  color = colorRampPalette(c("dodgerblue", "white", "mediumvioletred"))(33))
+      breakList = seq(-10, 10, by = 0.5)
+      pheatmap((denDeltaAQuA), cluster_rows = F, cluster_cols = F, breaks = breakList, color = colorRampPalette(c("dodgerblue", "white", "mediumvioletred"))(length(breakList)))
       
   #DEMO: now that you have made the AQuA heatmap, run:
       AQuAfactor1 = 1; AQuAfactor2 = 1  #set AQUA factor to 1
-      #then, rerun lines 70 through 87 to see what happens without AQuA normalization
-      #then, rerun line 68 to put back the correct AQuA factors before moving onward to make Virtual 4C plots below
+      #then, rerun lines 72 through 91 to see what happens without AQuA normalization
+      #then, rerun lines 70 through 72 to put back the correct AQuA factors before moving onward to make Virtual 4C plots below
       
 ### 5. Extract a virtual 4C viewpoint, make bedgraphs, plot VIRTUAL4C
       virt4C_viewpoint_chr = 'chr11'
@@ -151,17 +155,3 @@
       
       
       
-      
-      
-      
-      
-      
-      
-      
-      
-      
-      
-      
-      
-    
-    
