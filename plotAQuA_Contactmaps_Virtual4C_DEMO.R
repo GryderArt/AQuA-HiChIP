@@ -1,6 +1,6 @@
 ###HiC analysis, setup for compatibility with HiC-pro and Juicebox/juicer
 
-### for DEMO SKIP STEP 2
+### this is for partial DEMO (downloading example AQuA-HiChIP contact matrix rather than processing from raw fastq), thus Step 2 is largely commented out
 
 ### 1.Set up project and samples. 
 
