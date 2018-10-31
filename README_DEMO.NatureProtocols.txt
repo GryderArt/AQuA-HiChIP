@@ -3,6 +3,9 @@ README for AQuA-HiChIP code, 2018
 by Berkley Gryder, gryderart@gmail.com	
 ###########################################
 
+### Full DEMO: start with step a. - then skip l. and use m. instead
+### Partial DEMO: skip to step l. to plot data in R. Contains info to download matrix and mergestat files into HiC-pro mimic folders
+
 ### System requirements:
 ### Full DEMO requirements:
 	a. Software dependencies to install: 
@@ -26,9 +29,6 @@ by Berkley Gryder, gryderart@gmail.com
 			http://bowtie-bio.sourceforge.net/bowtie2/manual.shtml#obtaining-bowtie-2
 
 ### Partial DEMO requirements: R and R-studio only, can be performed on a "normal" desktop or laptop computer
-
-### Full DEMO: start with step d. 
-### Partial DEMO: skip to step l. that contains info to download matrix and mergestat files into HiC-pro mimic folders
 
 	***CODE IS SENSITIVE TO FOLDER PATHS, WHICH MUST BE UPDATED FROM THE DEMO TO MATCH YOUR LOCAL MACHINE***
 
@@ -61,26 +61,28 @@ by Berkley Gryder, gryderart@gmail.com
 		example code for hg19: /usr/local/Anaconda/envs_app/hicpro/2.10.0/HiC-Pro_2.10.0/bin/utils/hicpro2juicebox.sh -i /data/khanlab/projects/HiC/projects/RH4_H3K27ac_HiChIP_hg19/HiCpro_OUTPUT/hic_results/data/Sample_RH4_D6_H3K27ac_HiChIP_HKJ22BGX7/Sample_RH4_D6_H3K27ac_HiChIP_HKJ22BGX7_allValidPairs -g hg19 -j /usr/local/apps/juicer/juicer-1.5.6/scripts/juicer_tools.jar
 	k. Extraction of DEMO matrix using the juicer tool "dump"
 		example code: java -jar /usr/local/apps/juicer/juicer-1.5.6/scripts/juicer_tools.jar dump observed NONE /data/khanlab/projects/HiC/projects/RH4_H3K27ac_HiChIP/HiCpro_OUTPUT/hic_results/data/Sample_RH4_Ent6_H3K27ac_HiChIP_HKJ22BGX7/Sample_RH4_Ent6_H3K27ac_HiChIP_HKJ22BGX7_allValidPairs.hic 11:17600000:17800000 11:17600000:17800000 BP 5000 Sample_RH4_Ent6_H3K27ac_HiChIP_HKJ22BGX7.chr11.176MB-178MB.5KB.matrix.txt
-	l. Open R-studio to visualize heatmap
-		-download here: https://github.com/GryderArt/AQuA-HiChIP/blob/master/plotAQuA_Contactmaps_Virtual4C_DEMO.R
+	l. Use R-studio to visualize heatmap (Partial DEMO mode)
+		-download R code here: https://github.com/GryderArt/AQuA-HiChIP/blob/master/plotAQuA_Contactmaps_Virtual4C_DEMO.R
 		-to run a demo starting with pre-made matrices, create folders to mimic HiC-pro structure:
-				./projects/HiC/projects/RH4_H3K27ac_HiChIP/HiCpro_OUTPUT/hic_results/data/
-				./projects/HiC/projects/RH4_H3K27ac_HiChIP_mm10/HiCpro_OUTPUT/hic_results/data/
-		-into these folders, place sample DEMO matrix for control and treated cells here: https://github.com/GryderArt/AQuA-HiChIP/tree/master/DEMO_data
+				./projects/HiC/projects/RH4_H3K27ac_HiChIP/HiCpro_OUTPUT/hic_results/data/Sample_RH4_D6_H3K27ac_HiChIP_HKJ22BGX7/
+				./projects/HiC/projects/RH4_H3K27ac_HiChIP/HiCpro_OUTPUT/hic_results/data/Sample_RH4_Ent6_H3K27ac_HiChIP_HKJ22BGX7/
+		
+		-into these folders, place sample DEMO matrix downloaded from: https://github.com/GryderArt/AQuA-HiChIP/tree/master/DEMO_data
+				./projects/HiC/projects/RH4_H3K27ac_HiChIP/HiCpro_OUTPUT/hic_results/data/Sample_RH4_D6_H3K27ac_HiChIP_HKJ22BGX7/Sample_RH4_D6_H3K27ac_HiChIP_HKJ22BGX7.chr11.176MB-178MB.5KB.matrix.txt
+				./projects/HiC/projects/RH4_H3K27ac_HiChIP/HiCpro_OUTPUT/hic_results/data/Sample_RH4_Ent6_H3K27ac_HiChIP_HKJ22BGX7/Sample_RH4_Ent6_H3K27ac_HiChIP_HKJ22BGX7.chr11.176MB-178MB.5KB.matrix.txt
+
 		-to get mm10 and hg19 sample stats in DEMO without running HiC-pro, download file: https://github.com/GryderArt/AQuA-HiChIP/blob/master/DEMO_data/mergestat.HiChIP.all.txt
-			place mergestat.HiChIP.all.txt in this folder:  ./projects/HiC/projects/
-		-run R-code: Step 1, 3 and 4 to generate heatmaps with AQuA normalization
+			place mergestat.HiChIP.all.txt in this folder:  ./projects/HiC/projects/mergestat.HiChIP.all.txt
+
+		-run R-code: Step 1, 2 (mostly commented out for the partial DEMO), 3 and 4 to generate heatmaps with AQuA normalization
+		-run R-code: Step 5 to demonstrate the Virtual 4C code
+		-plots should resemble those inline in the Protocol text
+
+	m. Use R-studio to visualize heatmap (full DEMO mode)
+		-download R code here: https://github.com/GryderArt/AQuA-HiChIP/blob/master/plotAQuA_Contactmaps_Virtual4C.R
+		-run R-code. Step 1 will set up parameters - be sure to update the set working directory command, setwd(), to match your local drive path.
+		-run R-code. Step 2 will generate stat summary for hg19 and mm10 contact frequencies: ./projects/HiC/projects/mergestat.HiChIP.all.txt
+		-run R-code: Steps 3 and 4 are used to generate heatmaps with AQuA normalization
 		-run R-code: Step 5 to demonstrate the Virtual 4C code
 		-plots should resemble those inline in the Protocol text
 	
-
-
-
-			
-			
-
-	
-
-			
-		
-		
