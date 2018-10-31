@@ -4,6 +4,7 @@ by Berkley Gryder, gryderart@gmail.com
 ###########################################
 
 ### System requirements:
+### Full DEMO requirements:
 	a. Software dependencies to install: 
 		HiC-Pro 2.10.0
 		bowtie  2-2.3.4
@@ -24,7 +25,10 @@ by Berkley Gryder, gryderart@gmail.com
 			https://www.rstudio.com/products/rstudio/download/#download
 			http://bowtie-bio.sourceforge.net/bowtie2/manual.shtml#obtaining-bowtie-2
 
-### DEMO with instructions for use
+### Partial DEMO requirements: R and R-studio only, can be performed on a "normal" desktop or laptop computer
+
+### Full DEMO: start with step d. 
+### Partial DEMO: skip to step l. that contains info to download matrix and mergestat files into HiC-pro mimic folders
 
 	***CODE IS SENSITIVE TO FOLDER PATHS, WHICH MUST BE UPDATED FROM THE DEMO TO MATCH YOUR LOCAL MACHINE***
 
