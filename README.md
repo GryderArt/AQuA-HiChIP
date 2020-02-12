@@ -5,6 +5,11 @@ DEMO instructions: https://github.com/GryderArt/AQuA-HiChIP/blob/master/README_D
 
 Method preprint at Protocol Exchange: https://www.nature.com/protocolexchange/protocols/7121
 
+**UPDATE, Feb 2020**
+Nature Protocols now available! https://www.nature.com/articles/s41596-019-0285-9
+
+for questions or comments, feel free to contact berkley dot gryder at gmail dot com 
+
 ## AQuA-HiChIP uncovers global changes in protein-mediated contact frequency
 ![image](https://github.com/GryderArt/AQuA-HiChIP/raw/master/AQuA_Figure1Artboard%201%404x.png)
 
